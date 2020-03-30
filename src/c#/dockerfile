@@ -1,0 +1,17 @@
+FROM microsoft/dotnet:2.2-sdk-alpine AS builder
+RUN mkdir -p /root/hello-c-sharp/src
+WORKDIR /root/hello-c-sharp/src
+
+# Copy csproj and restore as distinct layers
+COPY src/*.csproj .
+RUN dotnet restore
+
+# Copy everything else and build
+COPY src/. .
+RUN dotnet publish -c Debug -o publish
+
+# Build runtime image
+FROM microsoft/dotnet:2.2-runtime-alpine
+WORKDIR /root/hello-c-sharp/src
+COPY --from=builder /root/hello-c-sharp/src/publish .
+ENTRYPOINT ["dotnet", "hello-c-sharp.dll"]
