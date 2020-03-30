@@ -1,0 +1,7 @@
+FROM node:alpine
+WORKDIR /hello-javascript
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 8080
+CMD [ "npm", "start" ]
