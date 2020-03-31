@@ -9,7 +9,7 @@ namespace hello_c_sharp
             var msgTo   = GetInput("To");
             var msgFrom = GetInput("From");
 
-            Console.WriteLine($"This is {msgFrom} saying hello {msgTo}!");
+            Console.WriteLine($"This is {msgFrom} saying hello {msgTo} from C#!");
         }
 
         static string GetInput(string prompt) {

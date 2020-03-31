@@ -11,7 +11,7 @@ func main() {
 	msgTo := getInput("To")
 	msgFrom := getInput("From")
 
-	var msg = "This is " + msgFrom + "saying hello " + msgTo + "!"
+	var msg = "This is " + msgFrom + " saying hello " + msgTo + " from go!"
 	fmt.Println(msg)
 }
 

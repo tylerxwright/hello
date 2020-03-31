@@ -1,0 +1,14 @@
+# Hello C#
+
+## Overview
+Hello C# is a simple hello world api that demonstrates
+the C# language using the dotnet runtime engine. It uses
+docker to create an image that runs the program.
+
+## Build
+
+`docker build -t devsplained/hello-c-sharp .`
+
+## Run
+
+`docker run -i devsplained/hello-c-sharp`

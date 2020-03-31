@@ -1,0 +1,11 @@
+# Get the golang image from Docker Hub
+FROM golang:alpine
+
+# Copy the current folder which contains go source code to the Docker image
+COPY src/. /hello-go
+
+# Specify the working directory
+WORKDIR /hello-go
+
+# Use go run to build and run the program
+RUN go run hello.go

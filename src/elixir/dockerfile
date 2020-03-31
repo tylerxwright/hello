@@ -1,0 +1,16 @@
+# Get the GCC preinstalled image from Docker Hub
+FROM elixir:1.10-alpine
+
+ENV MIX_ENV dev
+
+# Copy the current folder which contains Elixir source code to the Docker image under /usr/src
+COPY . /hello-elixir
+
+# Specify the working directory
+WORKDIR /hello-elixir
+
+# Use GCC to compile the Test.cpp source file
+RUN mix escript.build
+
+# Run the program output from the previous step
+CMD ["./hello_elixir"]
