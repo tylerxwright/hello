@@ -1,0 +1,11 @@
+# Get the GCC preinstalled image from Docker Hub
+FROM python:alpine
+
+# Copy the current folder which contains Elixir source code to the Docker image under /usr/src
+COPY src/ /hello-python
+
+# Specify the working directory
+WORKDIR /hello-python
+
+# Run the program output from the previous step
+CMD ["python", "hello-python.py"]

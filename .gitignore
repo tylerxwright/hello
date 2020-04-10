@@ -1,5 +1,17 @@
 .vscode/
+*.exe
+
+# Javascript, Typerscript
 node_modules/
+
+# C
 bin/
 obj/
-*.exe
+
+# Rust
+target
+Cargo.lock
+**/*.rs.bk
+
+# SQL
+*.db

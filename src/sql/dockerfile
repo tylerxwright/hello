@@ -1,0 +1,15 @@
+# Get the GCC preinstalled image from Docker Hub
+FROM alpine
+
+RUN apk add sqlite
+
+# Copy the current folder which contains Elixir source code to the Docker image under /usr/src
+COPY src/ /hello-sql
+
+# Specify the working directory
+WORKDIR /hello-sql
+
+RUN sqlite3 database.db < seed.sql
+
+# Run the program output from the previous step
+CMD ["./hello-sql.sh"]

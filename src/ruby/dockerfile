@@ -1,0 +1,10 @@
+# Get the GCC preinstalled image from Docker Hub
+FROM ruby:2.7.1-alpine
+
+# Copy the current folder which contains Elixir source code to the Docker image under /usr/src
+COPY lib/ /hello-ruby
+
+# Specify the working directory
+WORKDIR /hello-ruby
+
+CMD ["./hello-ruby.rb"]

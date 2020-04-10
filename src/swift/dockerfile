@@ -1,0 +1,9 @@
+FROM swift:5.2.1
+
+WORKDIR /hello-swift
+
+COPY . .
+
+RUN swift build
+
+CMD [ ".build/debug/cli" ]

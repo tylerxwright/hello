@@ -1,0 +1,12 @@
+# Get the GCC preinstalled image from Docker Hub
+FROM alpine
+
+RUN apk add --no-cache bash
+
+# Copy the current folder which contains Elixir source code to the Docker image under /usr/src
+COPY src/ /hello-bash
+
+# Specify the working directory
+WORKDIR /hello-bash
+
+CMD ["bash", "hello-bash.sh"]

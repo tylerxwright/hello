@@ -1,2 +1,4 @@
 dockerfile
+target
+Cargo.lock
 README.md
